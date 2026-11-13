@@ -7,5 +7,6 @@ dist/
 !.env.example
 CV_*.pdf
 public/documents/CV_*.pdf
+!public/documents/CV_Jean_Angelin_ANDRIAMANANTENA.pdf
 coverage/
 *.log

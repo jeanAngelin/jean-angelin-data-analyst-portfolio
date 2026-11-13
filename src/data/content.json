@@ -12,15 +12,16 @@
     "graduationYear": "2024–2025"
   },
   "profile": {
-    "fr": "Diplômé en informatique, je développe mes compétences en analyse de données, Python, SQL et Business Intelligence. Mon objectif : transformer des données brutes en informations utiles pour éclairer la prise de décision.",
-    "en": "A computer science graduate, I am developing my skills in data analysis, Python, SQL, and Business Intelligence. My goal is to turn raw data into useful information that supports better decisions."
+    "fr": "Diplômé d’un Master II en Informatique de l’ENI Fianarantsoa (2024–2025), je réalise des projets d’analyse de données avec Python, SQL et Excel, puis restitue les résultats dans des tableaux de bord. Mon parcours comprend également un stage en sécurité informatique et des projets pratiques en administration réseau. Je recherche une première opportunité en analyse de données.",
+    "en": "A 2024–2025 Master's graduate in Computer Science from ENI Fianarantsoa, I build data analysis projects with Python, SQL, and Excel, then present findings in dashboards. My background also includes an information security internship and practical network administration projects. I am seeking my first data analyst opportunity."
   },
   "skills": [
     { "category": { "fr": "Programmation et analyse", "en": "Programming & analysis" }, "items": ["Python", "Pandas", "NumPy"] },
     { "category": { "fr": "Bases de données", "en": "Databases" }, "items": ["SQL", "SQLite"] },
     { "category": { "fr": "Visualisation et BI", "en": "Visualization & BI" }, "items": ["Excel", "Power BI", "Matplotlib", "Seaborn", "Plotly"] },
     { "category": { "fr": "Développement et outils", "en": "Development & tools" }, "items": ["Streamlit", "Git", "GitHub", "VS Code"] },
-    { "category": { "fr": "Méthodologie", "en": "Methods" }, "items": ["Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Analysis", "Business Reporting"] }
+    { "category": { "fr": "Méthodologie", "en": "Methods" }, "items": ["Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Analysis", "Business Reporting"] },
+    { "category": { "fr": "Informatique et réseaux", "en": "IT & networking" }, "items": ["Windows", "Linux (Kali)", "TCP/IP", "DNS · DHCP · VLAN", "Cisco Packet Tracer"] }
   ],
   "skillsStatus": { "fr": "En cours d’apprentissage", "en": "Currently learning" },
   "project": {
@@ -30,11 +31,11 @@
       "fr": "Analyse des performances d’une entreprise fictive malgache à partir d’un jeu de ventes synthétiques : génération, nettoyage, analyses Python et SQL, rapport Excel et dashboard interactif.",
       "en": "A sales performance analysis for a fictional Malagasy retailer using synthetic data: generation, cleaning, Python and SQL analysis, an Excel report, and an interactive dashboard."
     },
-    "status": { "fr": "Étude de cas — Power BI Desktop en cours d’installation", "en": "Case study — Power BI Desktop installation in progress" },
-    "period": "2024–2025",
+    "status": { "fr": "Étude de cas — rapport Power BI en cours de construction", "en": "Case study — Power BI report in progress" },
+    "period": "2026",
     "synthetic": true,
     "tools": ["Python", "Pandas", "NumPy", "SQL", "SQLite", "Excel", "Power BI", "Streamlit", "Plotly"],
-    "githubRepo": "",
+    "githubRepo": "https://github.com/jeanAngelin/MadaStore-Sales-Analytics",
     "deployedApp": "",
     "reportFile": "/documents/MadaStore_Sales_Analysis.xlsx",
     "metrics": {
@@ -62,7 +63,7 @@
     "degree": { "fr": "Master II en Informatique", "en": "Master's Degree in Computer Science" },
     "school": { "fr": "École Nationale d’Informatique (ENI), Fianarantsoa", "en": "National School of Informatics (ENI), Fianarantsoa" },
     "year": "2024–2025",
-    "description": { "fr": "Formation universitaire en informatique. Année indiquée par le candidat ; détails académiques à préciser selon le CV.", "en": "University-level computer science education. Year supplied by the candidate; academic details can be refined from the CV." }
+    "description": { "fr": "Master II (2024–2025), Master I (2023–2024) et Licence en Informatique (2022–2023), École Nationale d’Informatique (ENI), Fianarantsoa.", "en": "Master's degree (2024–2025), first-year Master's (2023–2024), and Bachelor's degree in Computer Science (2022–2023), National School of Informatics (ENI), Fianarantsoa." }
   },
   "futureProjects": [
     { "fr": "Analyse de données éducatives", "en": "Education data analysis" },
