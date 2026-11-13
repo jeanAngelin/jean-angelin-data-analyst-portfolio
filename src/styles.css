@@ -166,9 +166,9 @@ img { display: block; max-width: 100%; }
 .contact-direct strong { font-size: 12px; font-weight: 600; }
 .contact-muted { color: var(--muted); font-size: 11px; }
 .contact-form { display: grid; gap: 14px; padding: 26px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); box-shadow: var(--shadow); }
-.contact-form label, .admin-form label { display: grid; gap: 7px; color: var(--muted); font-size: 11px; font-weight: 600; }
-.contact-form input, .contact-form textarea, .admin-form input, .admin-form textarea { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--surface); font-size: 13px; resize: vertical; }
-.contact-form input:focus, .contact-form textarea:focus, .admin-form input:focus, .admin-form textarea:focus { border-color: var(--blue); outline: 2px solid rgba(37,99,235,.12); }
+.contact-form label { display: grid; gap: 7px; color: var(--muted); font-size: 11px; font-weight: 600; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--surface); font-size: 13px; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); outline: 2px solid rgba(37,99,235,.12); }
 .form-note { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 
 .site-footer { color: #dce5f2; background: var(--navy); }
@@ -244,21 +244,6 @@ img { display: block; max-width: 100%; }
 .lightbox img { max-width: min(1200px, 94vw); max-height: 88vh; border-radius: 7px; }
 .lightbox button { position: absolute; top: 18px; right: 20px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; color: white; background: transparent; cursor: pointer; }
 
-.admin-page { min-height: 80vh; padding-block: 54px 84px; background: var(--surface-soft); }
-.admin-container { max-width: 860px; }
-.admin-container h1 { margin: 0; font-size: clamp(30px, 4vw, 42px); letter-spacing: -.045em; }
-.admin-container > .section-intro { max-width: 680px; }
-.admin-warning { margin: 24px 0; padding: 17px; border: 1px solid #f3d9a8; border-radius: 10px; color: #805d1b; background: #fff9ec; }
-:root[data-theme="dark"] .admin-warning { color: #f5d38e; background: #2b261a; border-color: #65532e; }
-.admin-warning strong { font-size: 12px; }
-.admin-warning p { margin: 7px 0 0; font-size: 11px; line-height: 1.6; }
-.admin-form { display: grid; gap: 14px; }
-.admin-form fieldset { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; margin: 0; padding: 20px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); }
-.admin-form legend { padding: 0 8px; color: var(--ink); font-size: 13px; font-weight: 700; }
-.admin-form fieldset label:has(textarea) { grid-column: 1 / -1; }
-.admin-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 6px; }
-.admin-saved { color: #16834b; font-size: 12px; }
-.admin-cv-note { margin-top: 22px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 
 @media (max-width: 1000px) {
   .desktop-nav { gap: 11px; }
@@ -325,8 +310,6 @@ img { display: block; max-width: 100%; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .gallery-item span { font-size: 9px; }
   .lightbox { padding: 18px; }
-  .admin-form fieldset { grid-template-columns: 1fr; padding: 16px; }
-  .admin-form fieldset label:has(textarea) { grid-column: auto; }
 }
 
 @media (max-width: 390px) {

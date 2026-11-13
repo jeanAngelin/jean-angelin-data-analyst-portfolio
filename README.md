@@ -11,8 +11,7 @@ Portfolio bilingue français / English, construit avec React, TypeScript, Vite e
 
 ## Personnaliser le contenu et le CV
 
-- `/admin` ouvre l’éditeur local. Il enregistre les modifications dans le navigateur et permet d’exporter un fichier JSON.
-- L’éditeur est local et sans authentification serveur : ses changements ne modifient pas automatiquement le site déjà hébergé. Après modification, reportez les valeurs exportées dans `src/data/content.json`, puis reconstruisez et redéployez.
+- Modifiez les informations dans `src/data/content.json`, puis reconstruisez et redéployez le site.
 - Remplacez `public/documents/CV_A_REMPLACER.txt` par votre PDF nommé `CV_Jean_Angelin_ANDRIAMANANTENA.pdf`. Le bouton de téléchargement apparaît seulement quand ce PDF existe.
 - Mettez à jour les liens et votre progression dans `src/data/content.json`. Les niveaux de compétence ne sont pas inventés.
 

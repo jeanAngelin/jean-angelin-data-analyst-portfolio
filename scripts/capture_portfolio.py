@@ -33,26 +33,17 @@ with sync_playwright() as p:
     reveal_full_page(page)
     page.screenshot(path=str(OUT / "02-madastore-case.png"), full_page=True)
     page.goto("http://127.0.0.1:5173/admin", wait_until="networkidle")
-    assert page.locator(".admin-warning").is_visible()
-    name_field = page.locator(".admin-form input").first
-    name_field.fill("Jean Angelin ANDRIAMANANTENA Test")
-    page.get_by_role("button", name="Enregistrer dans ce navigateur").click()
-    page.reload(wait_until="networkidle")
-    assert page.locator(".admin-form input").first.input_value() == "Jean Angelin ANDRIAMANANTENA Test"
-    page.get_by_role("button", name="Revenir au contenu du projet").click()
-    page.wait_for_load_state("networkidle")
-    assert page.locator(".admin-form input").first.input_value() == "Jean Angelin ANDRIAMANANTENA"
-    reveal_full_page(page)
-    page.screenshot(path=str(OUT / "03-admin.png"), full_page=True)
-    page.goto("http://127.0.0.1:5173/", wait_until="networkidle")
+    page.wait_for_url("http://127.0.0.1:5173/")
+    assert page.get_by_role("heading", name="Jean Angelin ANDRIAMANANTENA").is_visible()
+    assert page.locator('a[href="/admin"]').count() == 0
     page.get_by_role("button", name="Switch to English").click()
     assert page.get_by_role("heading", name="Jean Angelin ANDRIAMANANTENA").is_visible()
     reveal_full_page(page)
-    page.screenshot(path=str(OUT / "04-home-en.png"), full_page=True)
+    page.screenshot(path=str(OUT / "03-home-en.png"), full_page=True)
     page.get_by_role("button", name="Toggle theme").click()
     assert page.locator("html").get_attribute("data-theme") == "dark"
     reveal_full_page(page)
-    page.screenshot(path=str(OUT / "05-home-dark.png"), full_page=True)
+    page.screenshot(path=str(OUT / "04-home-dark.png"), full_page=True)
     page.set_viewport_size({"width": 390, "height": 844})
     page.reload(wait_until="networkidle")
     page.get_by_role("button", name="Open menu").click()
@@ -61,13 +52,13 @@ with sync_playwright() as p:
     overflow = page.locator("body").evaluate("el => ({width: el.scrollWidth, viewport: window.innerWidth, offenders: [...el.querySelectorAll('*')].map(e => ({tag:e.tagName, cls:typeof e.className === 'string' ? e.className : '', x:Math.round(e.getBoundingClientRect().x), right:Math.round(e.getBoundingClientRect().right), w:Math.round(e.getBoundingClientRect().width)})).filter(e => e.x < 0 || e.right > window.innerWidth + 1).slice(0,12)})")
     assert overflow["width"] <= overflow["viewport"], overflow
     reveal_full_page(page)
-    page.screenshot(path=str(OUT / "06-home-mobile.png"), full_page=True)
+    page.screenshot(path=str(OUT / "05-home-mobile.png"), full_page=True)
     page.goto("http://127.0.0.1:5173/projects/madastore", wait_until="networkidle")
     assert page.locator("body").evaluate("el => el.scrollWidth <= window.innerWidth")
     reveal_full_page(page)
-    page.screenshot(path=str(OUT / "07-case-mobile.png"), full_page=True)
+    page.screenshot(path=str(OUT / "06-case-mobile.png"), full_page=True)
     browser.close()
 
 if errors:
     raise SystemExit("Browser errors: " + " | ".join(errors))
-print("OK: home, case, admin, English, dark mode, mobile; no page errors or horizontal overflow.")
+print("OK: home, case, admin removal/redirect, English, dark mode, mobile; no page errors or horizontal overflow.")

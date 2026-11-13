@@ -2,31 +2,18 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import initialContent from '../data/content.json';
 import type { Language } from '../i18n/translations';
 
-export type SiteContent = typeof initialContent;
 type SiteContextValue = {
-  content: SiteContent;
-  updateContent: (next: SiteContent) => void;
-  resetContent: () => void;
+  content: typeof initialContent;
   language: Language;
   setLanguage: (language: Language) => void;
   theme: 'light' | 'dark';
   toggleTheme: () => void;
 };
 
-const STORAGE_KEY = 'ja-portfolio-content-v1';
 const SiteContext = createContext<SiteContextValue | null>(null);
 
-function readStoredContent(): SiteContent {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) as SiteContent : initialContent;
-  } catch {
-    return initialContent;
-  }
-}
-
 export function SiteProvider({ children }: { children: ReactNode }) {
-  const [content, setContent] = useState<SiteContent>(readStoredContent);
+  const content = initialContent;
   const [language, setLanguage] = useState<Language>(() => localStorage.getItem('ja-portfolio-language') === 'en' ? 'en' : 'fr');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => localStorage.getItem('ja-portfolio-theme') === 'dark' ? 'dark' : 'light');
 
@@ -39,8 +26,6 @@ export function SiteProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<SiteContextValue>(() => ({
     content,
-    updateContent: (next) => { setContent(next); localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); },
-    resetContent: () => { setContent(initialContent); localStorage.removeItem(STORAGE_KEY); },
     language,
     setLanguage,
     theme,
