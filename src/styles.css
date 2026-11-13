@@ -238,7 +238,7 @@ img { display: block; max-width: 100%; }
 .gallery-disclosure[open] summary { margin-bottom: 16px; }
 .gallery-disclosure summary:hover { border-color: var(--accent); }
 .gallery-item { overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 10px; text-align: left; background: var(--surface); cursor: zoom-in; }
-.gallery-item img { width: 100%; aspect-ratio: 1.5; object-fit: cover; object-position: top left; transition: transform .24s; }
+.gallery-item img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; object-position: center; background: #171717; transition: transform .24s; }
 .gallery-item:hover img { transform: scale(1.025); }
 .gallery-item span { display: flex; justify-content: space-between; align-items: center; padding: 11px 12px; color: var(--ink); font-size: 10px; }
 .gallery-item svg { color: var(--muted); }
