@@ -1,0 +1,3 @@
+# Anomalies synthétiques et traitement
+
+Le fichier source data/raw/sales.csv inclut 5 quantités manquantes, une date non interprétable, un taux de remise hors plage et deux lignes dupliquées. `src/data_cleaning.py` supprime les doublons par identifiant de commande, interprète les dates avec coercition, écarte les lignes sans date/quantité, conserve uniquement les quantités positives et les remises entre 0 et 50 %, puis écrit un nouveau fichier sous data/processed/. Les sources brutes ne sont jamais modifiées par ce nettoyage. Les tables de référence synthétiques sont cohérentes avec les clés utilisées dans les ventes.

@@ -1,0 +1,76 @@
+{
+  "identity": {
+    "name": "Jean Angelin ANDRIAMANANTENA",
+    "initials": "JA",
+    "role": { "fr": "Data Analyst Junior", "en": "Junior Data Analyst" },
+    "location": { "fr": "Fianarantsoa, Madagascar", "en": "Fianarantsoa, Madagascar" },
+    "email": "ajeanangelin@gmail.com",
+    "github": "https://github.com/jeanAngelin",
+    "linkedin": "",
+    "degree": { "fr": "Master II en Informatique", "en": "Master's Degree in Computer Science" },
+    "school": { "fr": "École Nationale d’Informatique (ENI), Fianarantsoa", "en": "National School of Informatics (ENI), Fianarantsoa" },
+    "graduationYear": "2024–2025"
+  },
+  "profile": {
+    "fr": "Diplômé en informatique, je développe mes compétences en analyse de données, Python, SQL et Business Intelligence. Mon objectif : transformer des données brutes en informations utiles pour éclairer la prise de décision.",
+    "en": "A computer science graduate, I am developing my skills in data analysis, Python, SQL, and Business Intelligence. My goal is to turn raw data into useful information that supports better decisions."
+  },
+  "skills": [
+    { "category": { "fr": "Programmation et analyse", "en": "Programming & analysis" }, "items": ["Python", "Pandas", "NumPy"] },
+    { "category": { "fr": "Bases de données", "en": "Databases" }, "items": ["SQL", "SQLite"] },
+    { "category": { "fr": "Visualisation et BI", "en": "Visualization & BI" }, "items": ["Excel", "Power BI", "Matplotlib", "Seaborn", "Plotly"] },
+    { "category": { "fr": "Développement et outils", "en": "Development & tools" }, "items": ["Streamlit", "Git", "GitHub", "VS Code"] },
+    { "category": { "fr": "Méthodologie", "en": "Methods" }, "items": ["Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Analysis", "Business Reporting"] }
+  ],
+  "skillsStatus": { "fr": "En cours d’apprentissage", "en": "Currently learning" },
+  "project": {
+    "title": "MadaStore Sales Analytics",
+    "tagline": { "fr": "Comprendre les ventes pour éclairer les décisions commerciales.", "en": "Understand sales performance to support business decisions." },
+    "summary": {
+      "fr": "Analyse des performances d’une entreprise fictive malgache à partir d’un jeu de ventes synthétiques : génération, nettoyage, analyses Python et SQL, rapport Excel et dashboard interactif.",
+      "en": "A sales performance analysis for a fictional Malagasy retailer using synthetic data: generation, cleaning, Python and SQL analysis, an Excel report, and an interactive dashboard."
+    },
+    "status": { "fr": "Étude de cas — Power BI Desktop en cours d’installation", "en": "Case study — Power BI Desktop installation in progress" },
+    "period": "2024–2025",
+    "synthetic": true,
+    "tools": ["Python", "Pandas", "NumPy", "SQL", "SQLite", "Excel", "Power BI", "Streamlit", "Plotly"],
+    "githubRepo": "",
+    "deployedApp": "",
+    "reportFile": "/documents/MadaStore_Sales_Analysis.xlsx",
+    "metrics": {
+      "orders": 5993,
+      "rawRows": 6002,
+      "revenueMGA": 13825481250,
+      "profitMGA": 3452044250,
+      "marginPercent": 24.97,
+      "annualRevenue": { "2024": 7062684000, "2025": 6762797250 }
+    },
+    "facts": {
+      "fr": ["Ordinateurs : environ 8 063 785 000 MGA de ventes nettes et 1 776 785 000 MGA de bénéfice.", "Laptop Graphique : bénéfice le plus élevé, environ 769 290 000 MGA.", "Laptop Essentiel 15 : 868 unités vendues.", "Atsimo-Andrefana : environ 2 014 389 750 MGA de ventes nettes."],
+      "en": ["Computers: about MGA 8,063,785,000 net revenue and MGA 1,776,785,000 profit.", "Laptop Graphique: highest product profit at about MGA 769,290,000.", "Laptop Essentiel 15: 868 units sold.", "Atsimo-Andrefana: about MGA 2,014,389,750 net revenue."]
+    },
+    "methodology": {
+      "fr": ["6 000 ventes synthétiques générées avec une graine reproductible pour 2024–2025.", "Anomalies documentées : valeurs manquantes, date et remise invalides, doublons.", "Nettoyage conservant les sources intactes : dates/quantités invalides et remises hors plage supprimées.", "Mesures cohérentes entre Python, SQLite, Excel et Streamlit.", "15 requêtes SQL couvrant jointures, agrégations, CTE et fonctions fenêtre."],
+      "en": ["6,000 reproducible synthetic sales generated for 2024–2025.", "Documented test anomalies: missing values, an invalid date and discount, and duplicate orders.", "Cleaning preserves raw sources and removes invalid dates/quantities and out-of-range discounts.", "Measures are cross-checked across Python, SQLite, Excel, and Streamlit.", "15 SQL queries cover joins, aggregations, CTEs, and window functions."]
+    },
+    "limitations": {
+      "fr": "Jeu entièrement synthétique : les résultats illustrent une méthode et ne décrivent pas de clients ni de ventes réels. Le PBIX et les URL de déploiement ne sont pas disponibles à ce stade.",
+      "en": "All records are synthetic: results demonstrate an analytical method and do not describe real customers or sales. A PBIX file and deployment URLs are not available at this stage."
+    }
+  },
+  "education": {
+    "degree": { "fr": "Master II en Informatique", "en": "Master's Degree in Computer Science" },
+    "school": { "fr": "École Nationale d’Informatique (ENI), Fianarantsoa", "en": "National School of Informatics (ENI), Fianarantsoa" },
+    "year": "2024–2025",
+    "description": { "fr": "Formation universitaire en informatique. Année indiquée par le candidat ; détails académiques à préciser selon le CV.", "en": "University-level computer science education. Year supplied by the candidate; academic details can be refined from the CV." }
+  },
+  "futureProjects": [
+    { "fr": "Analyse de données éducatives", "en": "Education data analysis" },
+    { "fr": "Analyse financière", "en": "Financial analysis" },
+    { "fr": "Analyse des performances d’une entreprise", "en": "Business performance analysis" }
+  ],
+  "contact": {
+    "availability": { "fr": "Ouvert aux opportunités junior et aux collaborations à distance.", "en": "Open to junior opportunities and remote collaboration." },
+    "linkedinLabel": { "fr": "LinkedIn à ajouter", "en": "LinkedIn link to be added" }
+  }
+}
