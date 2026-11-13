@@ -6,13 +6,18 @@ import { useSite } from '../context/SiteContext';
 import { translations } from '../i18n/translations';
 
 const gallery = [
-  ['madastore-dashboard-overview.png', 'Executive overview'],
-  ['madastore-product-analysis.png', 'Product analysis'],
-  ['madastore-regional-analysis.png', 'Regional analysis'],
-  ['madastore-time-analysis.png', 'Time analysis'],
-  ['madastore-profit-analysis.png', 'Profitability analysis'],
-  ['madastore-data-quality.png', 'Data quality'],
-  ['madastore-recommendations.png', 'Recommendations']
+  ['madastore/readme/01-vue-generale-indicateurs.png', 'Vue générale · indicateurs', 'Overview · key metrics'],
+  ['madastore/readme/02-vue-generale-repartition.png', 'Vue générale · répartition', 'Overview · breakdown'],
+  ['madastore/readme/03-produits-classement.png', 'Produits · classement', 'Products · ranking'],
+  ['madastore/readme/04-produits-ventes-benefices.png', 'Produits · ventes et bénéfices', 'Products · sales and profit'],
+  ['madastore/readme/05-regions-classement.png', 'Régions · classement', 'Regions · ranking'],
+  ['madastore/readme/06-regions-details.png', 'Régions · détails', 'Regions · details'],
+  ['madastore/readme/07-temps-evolution.png', 'Temps · évolution mensuelle', 'Time · monthly trend'],
+  ['madastore/readme/08-temps-ventes-annuelles.png', 'Temps · ventes annuelles', 'Time · yearly sales'],
+  ['madastore/readme/09-rentabilite-comparaison.png', 'Rentabilité · comparaison', 'Profitability · comparison'],
+  ['madastore/readme/10-rentabilite-details.png', 'Rentabilité · détails', 'Profitability · details'],
+  ['madastore/readme/11-qualite-donnees.png', 'Qualité des données', 'Data quality'],
+  ['madastore/readme/12-recommandations.png', 'Recommandations commerciales', 'Business recommendations']
 ];
 
 export function ProjectPage() {
@@ -53,7 +58,7 @@ export function ProjectPage() {
 
         <Reveal className="case-facts"><p className="eyebrow">13 / {t.case.results}</p><h2>{language === 'fr' ? 'Quelques résultats et recommandations' : 'Selected findings and recommendations'}</h2><ul className="fact-list">{p.facts[language].map((fact) => <li key={fact}>{fact}</li>)}</ul><p>{language === 'fr' ? 'Les recommandations consistent à vérifier les stocks des ordinateurs à forte contribution, étudier les marges, comparer les canaux et valider les écarts régionaux avec les coûts logistiques réels.' : 'Recommendations include checking stock for high-contribution computers, reviewing margins, comparing channels, and validating regional differences with real logistics costs.'}</p></Reveal>
 
-        <Reveal className="gallery-section"><p className="eyebrow">14 / {t.case.gallery}</p><h2>{language === 'fr' ? 'Le dashboard en images' : 'Dashboard screenshots'}</h2><div className="gallery-grid">{gallery.map(([src, label]) => <button className="gallery-item" key={src} onClick={() => setActiveImage(src)} aria-label={`${language === 'fr' ? 'Agrandir' : 'Enlarge'} ${label}`}><img src={`/images/${src}`} alt={`${label} — ${t.case.syntheticNotice}`} /><span>{label}<ExternalLink size={14} /></span></button>)}</div></Reveal>
+        <Reveal className="gallery-section"><p className="eyebrow">14 / {t.case.gallery}</p><h2>{language === 'fr' ? 'Le dashboard en images' : 'Dashboard screenshots'}</h2><details className="gallery-disclosure"><summary>{language === 'fr' ? 'Afficher les 12 captures du tableau de bord' : 'Show all 12 dashboard screenshots'}</summary><div className="gallery-grid">{gallery.map(([src, labelFr, labelEn]) => { const label = language === 'fr' ? labelFr : labelEn; return <button className="gallery-item" key={src} onClick={() => setActiveImage(src)} aria-label={`${language === 'fr' ? 'Agrandir' : 'Enlarge'} ${label}`}><img src={`/images/${src}`} alt={`${label} — ${t.case.syntheticNotice}`} loading="lazy" decoding="async" /><span>{label}<ExternalLink size={14} /></span></button>; })}</div></details></Reveal>
 
         <Reveal className="limitations-panel"><p className="eyebrow">15 / {t.case.limits}</p><h2>{language === 'fr' ? 'Ce que les données ne permettent pas d’affirmer' : 'What these data cannot establish'}</h2><p>{p.limitations[language]}</p></Reveal>
 

@@ -233,6 +233,10 @@ img { display: block; max-width: 100%; }
 .text-link:hover { color: #1d4ed8; }
 .fact-list { display: grid; gap: 11px; max-width: 850px; margin: 0 0 18px; padding-left: 19px; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery-disclosure { margin-top: 20px; }
+.gallery-disclosure summary { width: fit-content; padding: 11px 15px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--surface); font-size: 12px; cursor: pointer; }
+.gallery-disclosure[open] summary { margin-bottom: 16px; }
+.gallery-disclosure summary:hover { border-color: var(--accent); }
 .gallery-item { overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 10px; text-align: left; background: var(--surface); cursor: zoom-in; }
 .gallery-item img { width: 100%; aspect-ratio: 1.5; object-fit: cover; object-position: top left; transition: transform .24s; }
 .gallery-item:hover img { transform: scale(1.025); }
