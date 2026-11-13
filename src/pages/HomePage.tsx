@@ -10,14 +10,21 @@ export function HomePage() {
   const { content, language } = useSite();
   const t = translations[language];
   const [mailPrepared, setMailPrepared] = useState(false);
+  const [emailDraftFile, setEmailDraftFile] = useState<string | null>(null);
   const p = content.project;
 
   function prepareEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = String(form.get('subject') || 'Portfolio contact');
-    const body = `${language === 'fr' ? 'Nom' : 'Name'}: ${form.get('name')}\n${language === 'fr' ? 'Email' : 'Email'}: ${form.get('email')}\n\n${form.get('message')}`;
-    window.location.href = `mailto:${content.identity.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const subject = String(form.get('subject') || 'Portfolio contact').replace(/[\r\n]+/g, ' ').trim();
+    const senderName = String(form.get('name') || '').trim();
+    const senderEmail = String(form.get('email') || '').trim();
+    const message = String(form.get('message') || '').trim();
+    const body = `${language === 'fr' ? 'Nom' : 'Name'}: ${senderName}\nEmail: ${senderEmail}\n\n${message}`;
+    const mailto = `mailto:${content.identity.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const eml = `To: ${content.identity.email}\r\nSubject: ${subject}\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n${body}`;
+    setEmailDraftFile(`data:message/rfc822;charset=utf-8,${encodeURIComponent(eml)}`);
+    window.location.href = mailto;
     setMailPrepared(true);
   }
 
@@ -88,7 +95,7 @@ export function HomePage() {
       <section className="section contact-section" id="contact">
         <div className="container contact-grid">
           <Reveal className="contact-copy"><p className="eyebrow">{t.contact.eyebrow}</p><h2>{t.contact.title}</h2><p className="section-intro">{t.contact.description}</p><div className="contact-direct"><a href={`mailto:${content.identity.email}`}><Mail size={19} /><span><small>Email</small><strong>{content.identity.email}</strong></span><ArrowUpRight size={16} /></a><a href={content.identity.github} target="_blank" rel="noreferrer"><Github size={19} /><span><small>{t.contact.github}</small><strong>github.com/jeanAngelin</strong></span><ArrowUpRight size={16} /></a><div><MapPin size={19} /><span><small>{t.contact.location}</small><strong>{content.identity.location[language]}</strong></span></div></div><p className="contact-muted">{t.contact.linkedinMissing}</p></Reveal>
-          <Reveal><form className="contact-form" onSubmit={prepareEmail}><label>{t.contact.name}<input name="name" required autoComplete="name" /></label><label>{t.contact.email}<input name="email" type="email" required autoComplete="email" /></label><label>{t.contact.subject}<input name="subject" required /></label><label>{t.contact.message}<textarea name="message" rows={4} required /></label><button type="submit" className="button button-primary">{t.contact.send}<ArrowUpRight size={16} /></button><p className="form-note">{mailPrepared ? t.contact.emailNote : t.contact.emailNote}</p></form></Reveal>
+          <Reveal><form className="contact-form" onSubmit={prepareEmail}><label>{t.contact.name}<input name="name" required autoComplete="name" /></label><label>{t.contact.email}<input name="email" type="email" required autoComplete="email" /></label><label>{t.contact.subject}<input name="subject" required /></label><label>{t.contact.message}<textarea name="message" rows={4} required /></label><button type="submit" className="button button-primary">{t.contact.send}<ArrowUpRight size={16} /></button>{mailPrepared ? <p className="form-note" role="status" aria-live="polite">{t.contact.emailPrepared} {emailDraftFile && <><a className="text-link" href={emailDraftFile} download="brouillon-contact.eml">{t.contact.downloadDraft}</a></>}</p> : <p className="form-note">{t.contact.emailNote}</p>}</form></Reveal>
         </div>
       </section>
     </main>
